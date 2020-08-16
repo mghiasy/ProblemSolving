@@ -16,9 +16,25 @@ public class TwoSum {
         }
         return res;
     }
+//
+    public static int[] twoSum2(int[] nums, int target) {
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i=0;i<nums.length;++i){
+            map.put(target-nums[i],i);
+        }
+        int temp = 0;
+        boolean flag= false;
+        for(int i=0;i<nums.length;++i){
+            if(map.containsKey(nums[i])){
+                if((nums[i] != target-nums[i] )&& map.get(nums[i])!=i )
+                    return new int[]{i,map.get(nums[i])};
+            }
+        }
+        return null;
+    }
 
     public static void main(String[] args) {
-        int[] num = {3, 3};
-        twoSum(num, 6);
+        int[] num = {3,3};
+        System.out.println(twoSum2(num, 6));
     }
 }
