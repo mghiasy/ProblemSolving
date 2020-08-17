@@ -8,6 +8,9 @@ import java.util.Stack;
 //Memory Usage: 42 MB, less than 76.79% of Java online submissions for Number of Islands.
 public class NumIslands {
     public static int numIslands(char[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
         Stack<int[]> st= new Stack<>();
         int x=0,y=0,islandCount=0;
         int[] popItem=new int[2];
@@ -48,6 +51,9 @@ public class NumIslands {
     //Runtime: 4 ms, faster than 25.59% of Java online submissions for Number of Islands.
     //Memory Usage: 41.5 MB, less than 98.71% of Java online submissions for Number of Islands.
     public static int numIslands2(char[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
         Stack<int[]> st= new Stack<>();
         int x=0,y=0,islandCount=0;
         int[] popItem=new int[2];
@@ -78,8 +84,39 @@ public class NumIslands {
         }
     }
 
+
+    //recursive
+    public static int numIslands3(char[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
+        int islandCount=0;
+        int[] popItem=new int[2];
+        for(int i=0;i<grid.length;++i){//no od rows
+            for(int j=0;j<grid[0].length;++j){
+                if(grid[i][j]=='1'){
+                    islandCount++;
+                    helperMethod2(grid,i,j);
+                }
+            }
+        }
+        return islandCount;
+    }
+    public static void helperMethod2(char[][] grid,int x,int y){
+        //recursive func should have return for base
+        if(x>=grid.length || y>=grid[0].length || x<0 || y<0 || grid[x][y]=='0')
+            return;
+       // if(x<grid.length && y<grid[0].length && x>=0 && y>=0 && grid[x][y]=='1') {
+            grid[x][y] = '0';
+            helperMethod2(grid,x+1,y);
+            helperMethod2(grid,x-1,y);
+            helperMethod2(grid,x,y+1);
+            helperMethod2(grid,x,y-1);
+        //}
+    }
+
     public static void main(String[] args) {
-        char[][] xx= {{'0','1','0'},{'1','0','1'},{'0','1','0'}};
-        System.out.println(numIslands(xx));
+        char[][] xx= {{'1','1','0','0','0'},{'1','1','0','0','0'},{'0','0','1','0','0'},{'0','0','0','1','1'}};
+        System.out.println(numIslands3(xx));
     }
 }
