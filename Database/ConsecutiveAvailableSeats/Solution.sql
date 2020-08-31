@@ -14,14 +14,6 @@ on a.seat_id = b.seat_id + 1 or a.seat_id = b.seat_id-1 -- JOJN Condition. --> b
 where a.free = 1 and b.free = 1 -- = WHERE c1.free + c2.free = 2;
 order by a.seat_id;
 
--- Similar to above next condition can be in where
-select distinct a.seat_id
-from cinema a join cinema b 
--- *******
-on a.seat_id = b.seat_id + 1 or a.seat_id = b.seat_id-1 -- JOJN Condition. --> better than where
-where a.free = 1 and b.free = 1
-order by a.seat_id;
-
 -- using IN for both seat_id+1,seat_id-1
 select distinct seat_id
 from cinema 
