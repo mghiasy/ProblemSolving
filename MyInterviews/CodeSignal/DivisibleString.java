@@ -12,9 +12,9 @@ public class DivisibleString {
 
         //begin is always inclusive
         //st.substring(begin) => end in inclusive
-        System.out.println(st.substring(0));
-        System.out.println(st.substring(1));
-        System.out.println(st.substring(2));
+//        System.out.println(st.substring(0));  = System.out.println(st)
+//        System.out.println(st.substring(1));
+//        System.out.println(st.substring(2));
         System.out.println("********");
         if(st.length() < k)
             return 0;
