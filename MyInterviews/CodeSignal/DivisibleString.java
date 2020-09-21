@@ -6,12 +6,17 @@ public class DivisibleString {
     public static int method(int n, int k) {
         Set<String> setTest = new HashSet<>();
         String st = String.valueOf(n);
+        //st.substring(begin, end) => end in inclusive => return end-begin elements
+//        System.out.println(st.substring(0,1)); //return 1 =>1-0 element
+//        System.out.println(st.substring(0,2));//return 12 =>2-0 elements
+        System.out.println("********");
         if(st.length() < k)
             return 0;
         int len = st.length();
-        for(int i =0; i<len-k; i++) {
-            String t = st.substring(i,i+k-1);
-            if(!t.equals("") && n%Integer.parseInt(t)==0) {
+        for(int i =0; i<len-k+1; i++) {//+1 because end is inclusive
+            String t = st.substring(i,i+k);
+            //length = end-begin = i+k-i=k ==> the exact size that we need
+            if(!t.equals("") && !t.equals("0") && n%Integer.parseInt(t)==0) {
                 setTest.add(t);
             }
         }
@@ -21,6 +26,7 @@ public class DivisibleString {
     public static void main(String[] args) {
         System.out.println(method(555,1));
         System.out.println(method(120,2));
+        System.out.println(method(10,1));
 
         //Test on Paper:
 
