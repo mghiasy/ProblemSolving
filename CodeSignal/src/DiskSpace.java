@@ -58,13 +58,13 @@ public class DiskSpace {
         x.add(4);
 
 
-        Map<String, Integer> map = new ....
-        StringBuilder sb = new StringBuilder();
-        for(int i = 0; i < string.length; i++){
-            if(map.containsKey(String.valueOf(string.charAt(i)))){
-                
-            }
-        }
+//        Map<String, Integer> map = new ....
+//        StringBuilder sb = new StringBuilder();
+//        for(int i = 0; i < string.length; i++){
+//            if(map.containsKey(String.valueOf(string.charAt(i)))){
+//
+//            }
+//        }
 
 
         System.out.println((MaxOfMin(2,x)));
