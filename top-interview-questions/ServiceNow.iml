@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/GroupAnagrams" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TrapRainWater" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ReOrder" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ProductExceptSelf" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MergeIntervals" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LetterCombinations" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FirstUniqChar" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Graph" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/LadderLength" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GetDecimalValue" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RealTest_PolyDivisable" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FindTarget" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ValidParentheses" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TwoSum_Tree" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
