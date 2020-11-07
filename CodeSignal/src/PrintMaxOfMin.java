@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class tset {
+public class PrintMaxOfMin {
     static int arr[] = {10, 20, 30, 50, 10, 70, 30};
 
     static void printMaxOfMin(int n)
