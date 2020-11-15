@@ -1,4 +1,4 @@
-package Test;
+package InterviewQuestions;
 
 public class BankRequests {
     //deposit x amount => add amount from account x

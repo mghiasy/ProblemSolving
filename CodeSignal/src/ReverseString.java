@@ -1,42 +1,55 @@
-import java.util.HashMap;
-import java.util.Map;
+package LeetCode;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class ReverseString {
-    private static void reverseString(String input){
-        String[] strArray= input.split("");
-        StringBuilder sb = new StringBuilder();
-        int j=0;
-        for(int i=strArray.length-1;i>=0;--i){
-            if(j %2 ==1){
-                sb.append(strArray[i].toUpperCase());
-                ++j;
-            }
-            else{
-                sb.append(strArray[i].toLowerCase());
-                ++j;
-            }
+    public static void reverseString(char[] s) {
+        char temp;
+        for (int i = 0, j = s.length - 1; i < s.length - 1 && j > i; ++i, --j) {
+            temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
         }
-        System.out.println(sb.toString());
+        int j = 0;
     }
-    private static void loadData(String input){
-        //for array
-        int[] array = new int[5];
-        array[0] = 0;
-        array[1] = 1;
-        for (int i = 0; i < 5; ++i) {
-            //do sth for element
-            array[i] = i;
+//with while
+    public static void reverseString3(char[] s) {
+        char temp;
+        int i=0;int j=s.length-1;
+        while (j>i) {
+            temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+            i++;
+            j--;
         }
+        int ss=0;
+    }
 
-        //for map
-        Map<String, Integer> map = new HashMap<>();
-        map.put("strr1", 1);
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            //do sth for entry
-        }
+    //recursion
+    //Time complexity : O(N) time to perform N/2N/2 swaps.
+    //Space complexity : O(N) to keep the recursion stack.
+    public static void reverseString2(char[] s) {
+        recReverseString(s, 0, s.length - 1);
+        int x = 1;
+    }
+
+    public static void recReverseString(char[] s, int left, int right) {
+        char temp;
+        if (right <= left) return;
+        temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+
+
+        int newLeft=left+1;
+        int newRight=right-1;
+        recReverseString(s, newLeft, newRight);
     }
 
     public static void main(String[] args) {
-        reverseString("abcdefg");
+        char[] t = {'a', 'b', 'c', 'd','e'};
+        reverseString3(t);
     }
 }
